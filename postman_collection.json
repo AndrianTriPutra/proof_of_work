@@ -1,0 +1,92 @@
+{
+	"info": {
+		"_postman_id": "39638c2b-1cea-4c5c-8f76-7833a0f44674",
+		"name": "blockchain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7573736"
+	},
+	"item": [
+		{
+			"name": "history",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8008/blockchain/history",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"blockchain",
+						"history"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "transaction",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "key",
+							"value": "8dc36b978241f2c9df415687101f61184ceaee4776579c7b68accaca1b6de99e",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8008/blockchain/transaction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"blockchain",
+						"transaction"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "payment",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"from\" : \"0x0001\",\n    \"to\":\"0x0002\",\n    \"idr\": 1000.1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8008/blockchain/payment",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8008",
+					"path": [
+						"blockchain",
+						"payment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
