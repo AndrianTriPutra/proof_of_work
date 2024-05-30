@@ -37,9 +37,9 @@ func main() {
 
 	difficult := 0
 	if version == "v1" {
-		difficult = 3 // in my opinion for pow v1, that is enough for example
+		difficult = 5 // in my opinion for pow v1, that is enough for example
 	} else if version == "v2" {
-		difficult = 18 //v2
+		difficult = 13 //v2
 	}
 
 	db, err := sqLite.NewConnection("database/block.db")
@@ -103,7 +103,7 @@ func main() {
 	echoNew.Server.IdleTimeout = timeout
 
 	runServer := func() {
-		log.Printf("[info] server running on port:[%s]", echoNew.Server.Addr)
+		log.Printf("[info] server running on port [%s]", echoNew.Server.Addr)
 		errServer <- echoNew.Server.ListenAndServe()
 	}
 
