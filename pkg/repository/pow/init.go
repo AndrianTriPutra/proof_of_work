@@ -25,11 +25,11 @@ func NewRepository(setting Setting) RepositoryI {
 }
 
 type RepositoryI interface {
-	PoW1(bc *domain.Blockchain, prevHash string) uint
+	PoW1(bc *domain.Blockchain, ts int64, prevHash string) uint
 
 	NewProof(b *domain.Blockchain) *ProofOfWork
-	Run(pOw *ProofOfWork, prevHash string, data []*domain.Data) (uint, []byte)
-	Validate(pOw *ProofOfWork, nonce uint, prevHash string, data []*domain.Data) bool
+	Run(pOw *ProofOfWork, ts int64, prevHash string, data []*domain.Data) (uint, []byte)
+	Validate(pOw *ProofOfWork, nonce uint, ts int64, prevHash string, data []*domain.Data) bool
 
-	PoW3(validator string, bc *domain.Blockchain, prevHash string) uint
+	PoW3(validator string, ts int64, bc *domain.Blockchain, prevHash string) uint
 }
