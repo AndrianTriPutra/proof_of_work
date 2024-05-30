@@ -19,6 +19,6 @@ func NewBlockChain(transRepo transaction.RepositoryI) Usecase {
 
 type Usecase interface {
 	CreateBlockchain(ctx context.Context, nonce uint, prevHash string) *domain.Blockchain
-	CreateBlock(ctx context.Context, nonce uint, a *domain.Blockchain, prevHash string) *domain.Block
+	CreateBlock(ctx context.Context, ts int64, nonce uint, a *domain.Blockchain, prevHash string) *domain.Block
 	LatestBlock(ctx context.Context) (model.Transaction, error)
 }
